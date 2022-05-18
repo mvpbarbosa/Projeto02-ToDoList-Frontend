@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/style.css" />
+    <link rel="icon" href="./assets/images/logo-friendzone-head.png" />
+    <title>FriendZone</title>
+  </head>
+  <body>
+    <!--Header-->
+    <header>
+      <section class="header">
+        <div class="Titulo">
+          <img src="./assets/images/logo-friendzone-head.png" alt="" />
+          <h1>FriendZone</h1>
+        </div>
+        <!-- Pesquisar paleta por ID -->
+        <div class="Pesquisa">
+          <button onclick="findByIdPublicacoes()">
+            <img src="./assets/images/lupa-icon.png" alt="" />
+          </button>
+          <input
+            type="text"
+            id="idPublicacao"
+            placeholder="Digite o ID da publicação e clique na lupa"
+          />
+        </div>
+
+        <!-- Criar nova publicação -->
+        <section class="button-modal-create">
+          <span id="msg-alert"></span>
+          <button type="button" class="default-button" onclick="abrirModal()">
+            Criar nova publicação
+          </button>
+        </section>
+      </section>
+    </header>
+
+    <main>
+      <!-- Modal -->
+      <section class="modal-overlay" id="overlayModal">
+        <div class="modal">
+          <!-- Abrir modal -->
+          <div class="modal-header">
+            <h2 id="title-header-modal">Criar uma publicação</h2>
+
+            <!-- Fechar modal -->
+            <a onclick="fecharModal()" class="close-modal">X</a>
+          </div>
+
+          <!-- Corpo do modal -->
+          <div class="modal-body">
+            <div>
+              <input type="hidden" name="id" id="id" />
+              <input
+                type="text"
+                name="nome"
+                id="nome"
+                placeholder="Nome de usuário"
+              />
+              <input
+                type="text"
+                name="dataHora"
+                id="dataHora"
+                placeholder="Data e hora da publicação"
+              />
+              <textarea
+                type="text"
+                name="texto"
+                id="texto"
+                placeholder="Digite um texto"
+                rows="5"
+              ></textarea>
+              <input
+                type="text"
+                name="foto"
+                id="foto"
+                placeholder="Link da foto de perfil"
+              />
+
+              <!-- Criar publicação -->
+              <button
+                onclick="createPublicacao(), fecharModal()"
+                class="default-button"
+                id="btnFormModal"
+              >
+                Cadastrar
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Abrir modal de deleção -->
+      <section class="modal-overlay" id="overlay-modal-delete">
+        <div class="modal">
+          <div class="modal-header">
+            <h2 id="title-header-modal">Confirmação de deleção</h2>
+            <a onclick="fecharModalDelete()" class="close-modal">X</a>
+          </div>
+
+          <div class="modal-body">
+            <p>Deseja realmente apagar essa publicação?</p>
+            <div class="btns-delete">
+              <button
+                class="btn-delete-no btn-delete"
+                onclick="fecharModalDelete()"
+              >
+                Não
+              </button>
+              <button class="btn-delete-yes btn-delete">Sim</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Publicações -->
+      <section class="Publicacoes">
+        <div id="publicacaoEscolhidaDiv"></div>
+        <h2 id="PublicacoesTitulo">Publicações</h2>
+      </section>
+    </main>
+
+    <script src="./assets/script.js"></script>
+  </body>
+</html>

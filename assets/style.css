@@ -1,0 +1,392 @@
+@import url("https://fonts.googleapis.com/css?family=Exo:400,700");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Exo, sans-serif;
+}
+
+/* * {border: #c3c3c3 1px dotted} */
+
+html {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  font-size: calc(60% + 0.8vmin);
+}
+
+header {
+  position: fixed;
+  background-color: rgba(182, 56, 232);
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 3px 0 0 rgba(0, 0, 0, 0.139);
+}
+
+header section.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: auto;
+}
+
+header section.header div.Titulo {
+  display: flex;
+  align-items: center;
+  font-size: 25px;
+  color: white;
+  width: 207px;
+}
+
+header section.header div.Titulo img {
+  width: 50px;
+  margin: 1rem;
+  margin-right: 0.1rem;
+}
+
+header section.header div.Pesquisa {
+  display: flex;
+  font-size: 15px;
+  margin: auto 35px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+header section.header div.Pesquisa button {
+  background: none;
+  border: none;
+  padding-right: 10px;
+  cursor: pointer;
+}
+
+header section.header div.Pesquisa button img {
+  width: 23px;
+  transition: all ease-in-out 0.2s;
+}
+
+header section.header div.Pesquisa button img:hover {
+  transform: scale(1.1);
+}
+
+header section.header div.Pesquisa input {
+  border-radius: 5px;
+  border: none;
+  width: 200px;
+  text-align: center;
+  height: 30px;
+  font-size: 10px;
+}
+
+body {
+  background-image: linear-gradient(
+    to top right,
+    blue,
+    #b638e8,
+    #4d4d4d54 110%
+  );
+  width: auto;
+  height: auto;
+  position: inherit;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+main {
+  margin: 0 auto;
+  padding-top: 8rem;
+  width: 100%;
+  align-items: center;
+  display: flex;
+}
+
+main section.Publicacoes h2#PublicacoesTitulo {
+  text-align: center;
+  font-size: 30px;
+  color: white;
+}
+
+main section.Publicacoes div#publicacaoEscolhidaDiv h2#PublicacaoEscolhida {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 30px;
+  color: white;
+}
+
+main section.Publicacoes div.PublicacaoContainer {
+  margin: 50px auto;
+  width: 50%;
+  height: auto;
+  box-shadow: 1px 1px 5px rgba(67, 67, 67, 0.482);
+  border-radius: 2rem;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.354);
+  max-width: 50%;
+}
+
+main section.Publicacoes div.PublicacaoContainer div.PublicacaoHeader {
+  display: flex;
+  align-items: center;
+}
+
+main section.Publicacoes div.PublicacaoContainer div.PublicacaoHeader img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+main
+  section.Publicacoes
+  div.PublicacaoContainer
+  div.PublicacaoHeader
+  div.NomeAndHora
+  h2 {
+  color: blue;
+}
+
+main
+  section.Publicacoes
+  div.PublicacaoContainer
+  div.PublicacaoHeader
+  div.NomeAndHora
+  h3 {
+  font-size: 10px;
+  margin-top: -2.5px;
+  color: rgba(0, 0, 0, 0.547);
+}
+
+main section.Publicacoes div.PublicacaoContainer div.PublicacaoMain h3 {
+  margin-top: 2rem;
+  color: white;
+  font-weight: 400;
+}
+
+.modal-overlay {
+  background-color: #00000090;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+}
+
+.modal {
+  margin: 1rem;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  min-height: 300px;
+  background-color: #fff;
+  border-radius: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: linear-gradient(to bottom, #b638e8 40%, blue);
+  padding: 1rem;
+  color: white;
+}
+
+.close-modal {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1.5rem;
+  transform: scale(0.7);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.close-modal:hover {
+  transform: scale(1);
+}
+
+.modal-body {
+  padding: 0.5rem 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-body div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-body div input,
+textarea {
+  width: 340%;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  outline: none;
+  border: solid 1px #ccc;
+  margin-bottom: 0.4rem;
+  border-radius: 0.3rem;
+}
+
+.modal-body div button.default-button {
+  padding: 0.5rem;
+  width: 100%;
+  font-size: 1rem;
+  background-color: transparent;
+  color: #b638e8;
+  border: solid 1px #b638e8;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.modal-body div button.default-button:hover {
+  background-color: #b638e8;
+  color: #fff;
+}
+
+.button-modal-create {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.default-button {
+  margin: 1rem;
+  padding: 0.5rem;
+  width: 100%;
+  font-size: 1rem;
+  background-color: transparent;
+  color: #ffffff;
+  border: solid 1px #ffffff;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.default-button:hover {
+  background-color: #ffffff;
+  color: #b638e8;
+}
+
+.PublicacaoFooter {
+  display: flex;
+  justify-content: end;
+  margin-bottom: -1.5rem;
+}
+
+.PublicacaoFooter button {
+  width: 10%;
+  height: 30px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+#btnEditar {
+  color: blue;
+  border-color: blue;
+}
+
+#btnEditar:hover {
+  color: white;
+  background-color: blue;
+}
+
+#btnApagar {
+  color: rgb(255, 0, 0);
+  border-color: rgb(255, 0, 0);
+}
+
+#btnApagar:hover {
+  color: white;
+  background-color: rgb(255, 0, 0);
+}
+
+.modal-body {
+  display: flex;
+  flex-wrap: wrap;
+}
+.modal-body p {
+  width: 100%;
+  padding: 2rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.btns-delete {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.btn-delete {
+  background-color: transparent;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  border-radius: 0.5rem;
+  width: 30%;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-delete-no {
+  color: #ff0000;
+  border: solid 1px #ff0000;
+}
+
+.btn-delete-no:hover {
+  background-color: #ff0000;
+  color: #fff;
+}
+
+.btn-delete-yes {
+  color: #00b309;
+  border: solid 1px #00b309;
+}
+
+.btn-delete-yes:hover {
+  background-color: #00b309;
+  color: #fff;
+}
+
+.button-modal-create {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 10px 10px 10px;
+}
+
+#msg-alert {
+  text-align: center;
+  z-index: 999999;
+  font-weight: 600;
+  position: absolute;
+  margin-top: 10rem;
+}
+
+.sucess {
+  background-color: #a4ffa4;
+  color: #006905;
+  border: solid 1px #006905;
+  padding: 0.8rem;
+  border-radius: 0.3rem;
+}
+
+.danger {
+  background-color: #ffa4a4;
+  color: #690000;
+  border: solid 1px #690000;
+  padding: 0.8rem;
+  border-radius: 0.3rem;
+}
